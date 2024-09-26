@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendinha Allegro</title>
+</head>
+<body>
+    <h1>Vendas Registradas</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Item</th>
+            <th>Quantidade</th>
+            <th>Preço</th>
+        </tr>
+        {% for sale in sales %}
+        <tr>
+            <td>{{ sale.id }}</td>
+            <td>{{ sale.item }}</td>
+            <td>{{ sale.quantity }}</td>
+            <td>{{ sale.price }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('register_sale') }}">Registrar Nova Venda</a>
+</body>
+</html>
